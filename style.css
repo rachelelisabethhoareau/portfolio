@@ -1,0 +1,158 @@
+body
+{background-color: #e4d7e3;}
+
+@font-face {
+    font-family: "Blank_River";
+    src: url("fonts/Blank_River.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "RotisSemiSansStd-Italic";
+    src: url("fonts/RotisSemiSansStd-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Rotis_Semi_Sans_Std-ExtraBold";
+    src: url("fonts/Rotis_Semi_Sans_Std-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Rotis_Semi_Sans_Std_Light";
+    src: url("fonts/Rotis_Semi_Sans_Std_Light.ttf") format("truetype");
+}
+
+.bandeau {
+    background-image: url(/VS_Code/Portfolio/media/Qui-est-RR.jpg); /* chemin absolu */
+    background-size: cover; /* taille : image couvre toute la zone */
+    background-position: center; /* positionnement : image centrée */
+    height: 20em; /* hauteur de bandeau */
+    display: flex; /* flexbox */
+    flex-direction: column; /* empile profil + texte */
+    align-items: center; /* centrer verticalement le contenu */ 
+    justify-content: center; /* centrer horizontalement le contenu */ 
+    color: #940040; /* Couleur bleu : color: #363358; */
+    font-family: "Blank_River";
+    font-size: 2em;
+    position: relative; /* nécessaire si tu veux positionner la pastille en absolu */
+}
+
+.bandeau img {
+    width: 7em; /* largeur de l'image */ 
+    height: 7em; /* hauteur de l'image */ 
+    object-fit: cover; /* recadre l’image sans la déformer */ 
+    border-radius: 50%; /* rend l’image parfaitement ronde */ 
+    border: 0.1em solid #363358;;
+}
+
+#intro {
+    font-family: "Blank_River";
+    font-size: 2em;
+    color: #940040;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu li {
+    display: list-item; /* agir sur les puces */
+    list-style-type: circle;
+    margin: 4em;
+    margin-left: 7em;
+    font-family: "Blank_River";
+    font-size: 2em;
+}
+
+h2 {
+    font-family: "Blank_River";
+    font-size: 2em;
+    color: #940040;
+    text-align: center;
+}
+
+.presentation {
+    display: flex;
+}
+
+.presentation img {
+    width: 25em;
+    height: fit-content;
+    margin-left: 2em;
+    margin-right: 2em;  
+}
+
+.presentation p {
+    font-family: "Rotis_Semi_Sans_Std_Light";
+    font-size: 1em;
+    color: #363358;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.universitaire, .professionnel, .competences {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Rotis_Semi_Sans_Std_Light";
+    font-size: 1em;
+    color: #363358;
+    line-height: 1em;
+}
+
+.col1, .col2, .col3, .col4 {
+    width: fit-content;
+    height: fit-content;
+    gap: 100px;   
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.strong {
+    font-family: "Rotis_Semi_Sans_Std-ExtraBold";
+    font-size: 1em;
+    color: #363358;
+    line-height: 1em;
+}
+
+.italic {
+    font-family: "RotisSemiSansStd-Italic";
+     font-size: 1em;
+    color: #363358;
+    line-height: 1em;
+}
+
+.bandeau_section img {
+     width: 15em; 
+     height: auto; /* garde les proportions */ 
+     display: block; /* enlève l’espace blanc sous l’image */ 
+     margin:auto; /* centre l'image */
+}
+
+.page2 {
+    color : #363358;
+    font-family: "RotisSemiSansStd-ExtraBold";
+    font-size: 1em;
+}
+
+p span {
+    color : #363358;
+    font-family: "Blank_River";
+    font-size: 1.5em;
+    margin-left: 2em;
+}
+
+.ancre p {
+    font-family: "Rotis_Semi_Sans_Std-ExtraBold";
+    font-size: 1em;
+    color: #363358;
+}
+
+.footer {
+    height: 10em;
+    margin: 0; 
+    background-color: #f4d1d5;
+    color : #363358;
+    font-family: "RotisSemiSansStd-ExtraBold";
+    font-size: 1em;
+}
