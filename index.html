@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Portfolio_Rue.Rachel_Rachel.Hoareau</title>
+    <link rel="stylesheet" href="style.css">
+    </head>   
+<body>
+    <header>
+    <div class="bandeau">
+     <h1>Bienvenue dans l'univers de Rue Rachel</h1>
+     <img title="Rachel.Hoareau" alt="Erreur téléchargement" src="/VS_Code/Portfolio/media/Profil_RH.fondu.png">
+    </div>
+     <p id="intro"> Je suis Rachel HOAREAU alias Rue Rachel et je vous souhaite la bienvenue sur mon portfolio</p>
+    <nav class="menu">
+        <ul>
+            <li id="menu">Qui est Rue Rachel ?</a></li>
+            <li><a href="./travaux.html">Portfolio de Rue Rachel</a></li>
+       </ul>
+    </nav>
+    </header>
+    <section>
+      <h2>Du café dans les oreilles avec France Inter</h2>
+      <p>Résultat de la grille France Inter</p>
+      <pre id="result"></pre>
+
+      <script> 
+        const url = "https://openapi.radiofrance.fr/v1/graphql"; 
+        const API_KEY = "351139b7-2d0f-4c97-95c0-6627238f7a9c";
+        const query = ` 
+          { 
+            grid( 
+              start: 1549868400 
+              end: 1549881000 
+              station: FRANCEINTER 
+              includeTracks: false 
+          ) {
+            ... on DiffusionStep { 
+              id 
+              diffusion { 
+                id 
+                title 
+                standFirst 
+                url 
+                published_date 
+                podcastEpisode {
+                  id 
+                  title 
+                  url 
+                  playerUrl 
+                  created 
+                  duration
+                } 
+             } 
+           }
+           ... on TrackStep { 
+            id 
+            track { 
+              id 
+              title 
+              albumTitle
+            } 
+          }
+          ... on BlankStep { 
+            id 
+            title
+          } 
+        } 
+      } 
+    `;
+  fetch(url, { 
+    method: "POST", 
+    headers: { 
+      "Content-Type": "application/json",
+      "x-api-key": "351139b7-2d0f-4c97-95c0-6627238f7a9c"
+    },
+    body: JSON.stringify({ query })
+  })
+  .then(response => response.json()) 
+  .then(data => {
+    document.getElementById("result").textContent =
+      JSON.stringify(data, null, 2);
+  })
+  .catch(error => {
+    document.getElementById("result").textContent =
+      "Erreur : " + error;
+  });
+</script>
+    </section>
+    <section>
+        <h2>Le Web dans la peau</h2>
+    <div class="presentation">
+    <img title="Web" alt="Erreur téléchargement" src="/VS_Code/Portfolio/media/Web.jpg">
+    <p>Pourquoi Rue Rachel ? <br> J'aime tout simplement l'idée que mon identité professionnelle soit à la fois ouvert sur le monde et espace de création, qui rassemble des univers différents et maîtrisés. Âgée de 42 ans, je continue à avoir envie et à me donner les moyens d'apprendre et de me former. Je suis actuellement en première année de préparation de mon <a href ="https://www.sciences.unilim.fr/tic/deust-webmaster-et-metiers-de-linternet/" target="blank">DEUST Webmaster et Métiers de l'Internet</a>
+que je réalise en e-learning avec l'Université de Limoges. <br> Pour moi, le Web est un immense terrain de jeu où tout évolue très vite, ce qui est à la fois formateur et passionnant ! C'est un domaine dynamique et ouvert où il y a toujours matière à explorer, à expérimenter et à discuter. Le DEUST est à cette image, combinant des unités d'enseignement transversales et complémentaires telles que les langages de programmation, le SEO et l'ergonomie des interfaces.<br>Mon objectif ? Allier maîtrise technique et créativité pour des sites web modernes et design, responsives et ergonomiques, inclusifs et carbone-friendly où l'expérience utilisateur est au coeur.</p>
+    </div>
+</section>
+<section>
+        <h2>Mon parcours universitaire : Des formations complémentaires</h2>
+    <div class="bandeau_section">
+     <img title="Love.to.learn" alt="Erreur téléchargement" src="/VS_Code/Portfolio/media/lovetolearn.jpg">
+    </div>
+     <div class="universitaire">
+        <div class="col1">
+        <p>2025-2027</p>
+        <p class="strong">DEUST Webmaster et Métiers de l'Internet</p>
+        <p>Université de Limoges</p>
+        </div>
+        <div class="col2">
+        <p>2021-2023</p>
+        <p class="strong">Master Gouvernance européenne</p>
+        <p>IEP Grenoble</p>
+        </div>
+        <div class="col3">
+        <p>2013-2014</p>
+        <p class="strong">Certificat en Stylisme et Modélisme</p>
+        <p>ESMOD Paris</p>
+        </div>
+        <div class="col4">
+        <p>2001-2006</p>
+        <p class="strong">Master Management touristique</p>
+        <p>Université Toulouse 2 - UQAM</p>
+        </div>
+    </div>
+    </section>
+    <section>
+        <h2>Mon parcours professionnel : Un itinéraire riche en expérience</h2>
+    <div class="bandeau_section">
+    <img title="Life" alt="Erreur téléchargement" src="/VS_Code/Portfolio/media/lwc.jpg">
+    </div>
+    <div class="professionnel">
+        <div class="col1">
+        <p>2022-2026</p>
+        <p class="italic">Agence des Initiatives Locales en matière Européennes</p>
+        <p>Saint-Denis, La Réunion</p>
+        <p class="strong">Chargée de mission de suivi des indicateurs de performance du FEDER</p>
+        </div>
+        <div class="col1">
+        <p>2022-2023</p>
+        <p class="italic">Les Electropicales</p>
+        <p>Saint-Denis, La Réunion</p>
+        <p class="strong">Chargée de projet artistique - Art digital aux Camélias</p>
+        </div>
+        <div class="col1">
+        <p>2009-2020</p>
+        <p class="italic">Air Austral</p>
+        <p>Saint-Denis, La Réunion</p>
+        <p class="strong">Hôtesse de l'air</p> 
+        </div>
+    </div>  
+    </section>
+    <section>
+        <h2>Mes compétences : Savoir-faire et savoir-être</h2>
+    <div class="bandeau_section">
+    <img title="Elégance" alt="Erreur téléchargement" src="/VS_Code/Portfolio/media/elegance.jpg">
+    </div>
+    <div class="competences">
+    <div class="col1">
+        <p class="strong">Maîtrise rapide des outils et capacité d'adaptation</p>
+        <p>Suite bureautique type office :</p>
+        <ul><li>Word +++</li>
+            <li>Excel +++</li>
+            <li>Power Point +++</li>
+        </ul>
+        <p>Langages informatiques :</p>
+        <ul><li>CMS no code : WIX ++</li>
+            <li>HTML/CSS ++</li>
+        </ul>
+        </div>
+        <div class="col2">
+        <p class="strong">Créativité et autonomie</p>
+        <p>Applications :</p>
+        <ul><li>Canva +++</li>
+            <li>Drive +++</li>
+            <li>Copilot AI +++</li>
+            <li>Capcut ++</li>
+            <li>Notion ++</li>
+        </ul>
+        </div>
+        <div class="col3">
+        <p class="strong">Bonne communicante et esprit d'équipe</p>
+        <p>Réseaux sociaux :</p>
+        <ul><li>Instagram</li>
+            <li>Facebook</li>
+        </ul>
+        <p>Langues étrangères :</p>
+        <ul><li>Anglais : B2</li></ul>
+        </div>
+    </div>
+    </section>
+    <section class="ancre">
+    <p><a href="#menu">Vers Qui est Rue Rachel ?</a></p>
+    </section>
+   <footer class="footer">
+    <br/>
+        <p><span>Coordonnées :</span></p>
+        <ul>
+        <li>Adresse : 15 chemin Anaclet Bénard, Saint-Pierre, La Réunion</li>
+        <li>Téléphone : + 262 693 51 93 30</li>
+        <li>Email : <a href="mailto:rachel.hoareau@etu.unilim.fr">rachel.hoareau@etu.unilim.fr</a></li>
+        </ul>
+    </footer>
+</body>
